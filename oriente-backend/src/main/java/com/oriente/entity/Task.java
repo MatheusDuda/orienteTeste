@@ -1,7 +1,7 @@
 package com.oriente.entity;
 
 import jakarta.persistence.*;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "tasks")
@@ -11,16 +11,15 @@ public class Task {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @jakarta.persistence.Column(nullable = false)
+    @Column(nullable = false, length = 200)
     private String title;
 
-    @jakarta.persistence.Column
+    @Column(columnDefinition = "TEXT")
     private String description;
 
-    @jakarta.persistence.Column(name = "due_date")
-    private LocalDateTime dueDate;
+    @Column(name = "due_date")
+    private LocalDate dueDate;
 
-    // Relacionamentos
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "column_id", nullable = false)
     private KanbanColumn column;
@@ -29,16 +28,10 @@ public class Task {
     @JoinColumn(name = "assignee_id")
     private User assignee;
 
-    // Construtores
+    // Constructors
     public Task() {}
 
-    public Task(String title, String description, Column column) {
-        this.title = title;
-        this.description = description;
-        this.column = column;
-    }
-
-    public Task(String title, String description, LocalDateTime dueDate, Column column, User assignee) {
+    public Task(String title, String description, LocalDate dueDate, KanbanColumn column, User assignee) {
         this.title = title;
         this.description = description;
         this.dueDate = dueDate;
@@ -46,7 +39,7 @@ public class Task {
         this.assignee = assignee;
     }
 
-    // Getters e Setters
+    // Getters and Setters
     public Long getId() {
         return id;
     }
@@ -71,19 +64,19 @@ public class Task {
         this.description = description;
     }
 
-    public LocalDateTime getDueDate() {
+    public LocalDate getDueDate() {
         return dueDate;
     }
 
-    public void setDueDate(LocalDateTime dueDate) {
+    public void setDueDate(LocalDate dueDate) {
         this.dueDate = dueDate;
     }
 
-    public Column getColumn() {
+    public KanbanColumn getColumn() {
         return column;
     }
 
-    public void setColumn(Column column) {
+    public void setColumn(KanbanColumn column) {
         this.column = column;
     }
 
@@ -93,15 +86,5 @@ public class Task {
 
     public void setAssignee(User assignee) {
         this.assignee = assignee;
-    }
-
-    @Override
-    public String toString() {
-        return "Task{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", description='" + description + '\'' +
-                ", dueDate=" + dueDate +
-                '}';
     }
 }

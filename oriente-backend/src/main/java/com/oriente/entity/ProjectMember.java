@@ -8,7 +8,7 @@ import jakarta.persistence.*;
 public class ProjectMember {
 
     @EmbeddedId
-    private ProjectMemberId id;
+    public ProjectMemberId id;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @MapsId("userId")
@@ -21,7 +21,7 @@ public class ProjectMember {
     private Project project;
 
     @Enumerated(EnumType.STRING)
-    @jakarta.persistence.Column(name = "role_in_project", nullable = false)
+    @Column(name = "role_in_project", nullable = false)
     private ProjectRole roleInProject;
 
     // Construtores
@@ -73,53 +73,5 @@ public class ProjectMember {
 
     public void setRoleInProject(ProjectRole roleInProject) {
         this.roleInProject = roleInProject;
-    }
-}
-
-// Classe para chave composta
-@Embeddable
-class ProjectMemberId {
-
-    @jakarta.persistence.Column(name = "user_id")
-    private Long userId;
-
-    @jakarta.persistence.Column(name = "project_id")
-    private Long projectId;
-
-    public ProjectMemberId() {}
-
-    public ProjectMemberId(Long userId, Long projectId) {
-        this.userId = userId;
-        this.projectId = projectId;
-    }
-
-    // Getters e Setters
-    public Long getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Long userId) {
-        this.userId = userId;
-    }
-
-    public Long getProjectId() {
-        return projectId;
-    }
-
-    public void setProjectId(Long projectId) {
-        this.projectId = projectId;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof ProjectMemberId)) return false;
-        ProjectMemberId that = (ProjectMemberId) o;
-        return userId.equals(that.userId) && projectId.equals(that.projectId);
-    }
-
-    @Override
-    public int hashCode() {
-        return userId.hashCode() + projectId.hashCode();
     }
 }

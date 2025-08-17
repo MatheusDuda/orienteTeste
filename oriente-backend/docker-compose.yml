@@ -6,7 +6,7 @@ services:
     container_name: oriente-postgres
     environment:
       POSTGRES_DB: oriente_db
-      POSTGRES_USER: oriente_user
+        POSTGRES_USER: oriente_user
       POSTGRES_PASSWORD: oriente_password
     ports:
       - "5432:5432"
