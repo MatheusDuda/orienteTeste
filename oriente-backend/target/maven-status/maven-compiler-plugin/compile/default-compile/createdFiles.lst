@@ -6,10 +6,13 @@ com\oriente\entity\ProjectMember.class
 com\oriente\repository\ProjectMemberRepository.class
 com\oriente\repository\ChatMessageRepository.class
 com\oriente\entity\ProjectMemberId.class
+com\oriente\controller\ProjectController.class
 com\oriente\entity\KanbanColumn.class
 com\oriente\repository\TaskRepository.class
+com\oriente\controller\UserController.class
 com\oriente\entity\Task.class
 com\oriente\controller\TestController.class
+com\oriente\config\PasswordConfig.class
 com\oriente\OrienteBackendApplication.class
 com\oriente\config\SecurityConfig.class
 com\oriente\entity\enums\UserRole.class

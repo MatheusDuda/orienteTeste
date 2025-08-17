@@ -8,6 +8,7 @@ C:\Dev\tcc\orienteTeste\oriente-backend\src\main\java\com\oriente\controller\Tes
 C:\Dev\tcc\orienteTeste\oriente-backend\src\main\java\com\oriente\entity\ProjectMemberId.java
 C:\Dev\tcc\orienteTeste\oriente-backend\src\main\java\com\oriente\entity\enums\ProjectRole.java
 C:\Dev\tcc\orienteTeste\oriente-backend\src\main\java\com\oriente\repository\ChatMessageRepository.java
+C:\Dev\tcc\orienteTeste\oriente-backend\src\main\java\com\oriente\controller\UserController.java
 C:\Dev\tcc\orienteTeste\oriente-backend\src\main\java\com\oriente\entity\enums\UserRole.java
 C:\Dev\tcc\orienteTeste\oriente-backend\src\main\java\com\oriente\entity\Task.java
 C:\Dev\tcc\orienteTeste\oriente-backend\src\main\java\com\oriente\repository\ProjectRepository.java
@@ -17,3 +18,5 @@ C:\Dev\tcc\orienteTeste\oriente-backend\src\main\java\com\oriente\OrienteBackend
 C:\Dev\tcc\orienteTeste\oriente-backend\src\main\java\com\oriente\config\SecurityConfig.java
 C:\Dev\tcc\orienteTeste\oriente-backend\src\main\java\com\oriente\entity\KanbanColumn.java
 C:\Dev\tcc\orienteTeste\oriente-backend\src\main\java\com\oriente\entity\Project.java
+C:\Dev\tcc\orienteTeste\oriente-backend\src\main\java\com\oriente\controller\ProjectController.java
+C:\Dev\tcc\orienteTeste\oriente-backend\src\main\java\com\oriente\config\PasswordConfig.java
